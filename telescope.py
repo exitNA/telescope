@@ -1,4 +1,4 @@
-from operator import *
+from fill_rate import FillRate
 import numpy as np
 import pandas as pd
 
@@ -11,4 +11,5 @@ if __name__ == '__main__':
 
     opt = FillRate()
     for c in df:
+        print(df[c])
         print(opt(df[c]))
