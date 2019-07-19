@@ -14,7 +14,8 @@ class FillRate(BaseOperator):
             return x in self._empty_set
 
         total = series.shape[0]
-        empty_num = series.apply(_is_empty).sum()
+        # empty_num = series.apply(_is_empty).sum()
+        empty_num = np.isnan(series).sum()
         not_empty_num = total - empty_num
 
         return {
