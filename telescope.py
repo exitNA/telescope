@@ -1,16 +1,18 @@
-from opt.fill_rate import FillRate
 import numpy as np
 import pandas as pd
 
+from diff import Diff
 
 if __name__ == '__main__':
-    df = pd.DataFrame({
-        'x': [None, 2, np.NaN, 3, np.Inf],
-        'y': ['', 2, np.NaN, None, '1']
-    })
+  df1 = pd.DataFrame({
+    'x': [None, 2, np.NaN, 3, np.Inf],
+    'y': ['', 2, np.NaN, None, '1']
+  })
 
-    opt = FillRate()
-    for c in df:
-        print(c, type(df[c].iloc[2]))
-        print(df[c])
-        print(opt(df[c]))
+  df2 = pd.DataFrame({
+    'x': [1, 2, 3, 4],
+    'y': ['a', 'b', 'c', 'd']
+  })
+
+  diff = Diff()
+  diff(df1, df2)
