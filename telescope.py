@@ -1,4 +1,4 @@
-from fill_rate import FillRate
+from opt.fill_rate import FillRate
 import numpy as np
 import pandas as pd
 
